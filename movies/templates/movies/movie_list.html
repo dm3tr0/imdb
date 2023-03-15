@@ -1,0 +1,40 @@
+{% load static %}
+<title>Movies list</title>
+<div class="page-header">
+    <h1>Movies list
+    <form method='GET'>
+        <input class="form1" type='text' name='q' value='{{ request.GET.q }}'>
+        <input class="button1" type='submit' value="Search">
+    </form>
+    </h1>
+</div>
+<head>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+</head>
+<div class="content">
+    {% for movie in object_list %}
+    <img src="{{ movie.pic }}">
+    <h1><a href="{% url 'movie_detail' id=movie.imdb_id %}">{{ movie.name }}</a></h1>
+    <h3>{{ movie.year }}
+        {{ movie.genre }}</h3>
+    <hr>
+    {% endfor %}
+    <div>
+        <h2>Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</h2>
+    </div>
+
+    <ul class="pagination">
+        {% if page_obj.has_previous %}
+        <li><a href="?page=1"&laquo;>First</a></li>
+        <li><a href="?page={{page_obj.previous_page_number}}">Previous</a></li>
+        {% endif %}
+        {% if page_obj.has_next %}
+        <li><a href="?page={{page_obj.next_page_number}}">Next</a></li>
+        <li><a href="?page={{ page_obj.paginator.num_pages }}"&laquo;>Last</a></li>
+        {% endif %}
+    </ul>
+</div>
+

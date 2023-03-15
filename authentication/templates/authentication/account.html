@@ -1,0 +1,8 @@
+{% load static %}
+
+<div class="content">
+    <h2>{{ request.user }} <a href="{% url 'auth:logout' %}"> Log out</a></h2>
+    <hr>
+    <h3><a href="{% url 'auth:favourite_movies' %}"> Favourite movies</a></h3>
+    <h3><a href="{% url 'auth:comments' %}"> Ur comments</a></h3>
+</div>

@@ -1,0 +1,56 @@
+{% load static %}
+<title>Edit - {{movie.title_type}}-{{movie.name}}</title>
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+<link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{% static 'css/main.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="content">
+
+    <img src="{{ movie.pic }}">
+    <h1>{{ movie.name }} <a href="{% url 'movie_detail' id=movie.imdb_id %}">Go back to movie</a></h1>
+    <hr>
+    <h2>Year - {{ movie.year }}</h2>
+    <hr>
+    <h2>Genre - {{ movie.genre }}</h2>
+    <hr>
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ movie_form.as_p }}
+        <button class="button1" type="submit">Edit</button>
+    </form>
+    <hr>
+    <table>
+        <tr>
+        <th>Name</th>
+        <th>Birthday </th>
+        <th>Deathday</th>
+        <th>Job</th>
+        <th>Roles</th>
+        </tr>
+
+        {% for person in persons %}
+        <tr>
+        <td>{{ person.person.name }}</td>
+        <td>{{ person.person.birthday }}</td>
+        <td>{{ person.person.deathday }}</td>
+        <td>{{ person.personmovie.job }}</td>
+        <td>{{ person.personmovie.chars }}</td>
+        <form action="{% url 'person_delete' mid=movie.imdb_id pid=person.person.imdb_id %}" method="POST">
+            <td><button type="submit">delete</button></td>
+        </form>
+        
+        </tr>
+        {% endfor %}
+    </table>
+    <hr>
+    <br>
+    <h3>Add person</h3>
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ person_form.as_p }}
+        {{ personmovie_form.as_p }}
+        <button class="button1" type="submit">Edit</button>
+    </form>
+</div>

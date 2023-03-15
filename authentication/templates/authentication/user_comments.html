@@ -1,0 +1,4 @@
+{% for comment in comments %}
+    <h3>{{ comment.author }} - {{ comment.timestamp }}</h3>
+    <p>{{ comment.text }}</p>
+{% endfor %}

@@ -1,0 +1,184 @@
+.page-header {
+    background-color: #ff9400;
+    margin-top: 0;
+    padding: 20px 20px 20px 40px;
+}
+
+.page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
+    color: #ffffff;
+    font-size: 36pt;
+    text-decoration: none;
+    text-align: center;
+}
+
+.content {
+    margin-left: 100px;
+}
+
+h1 {
+    font-family: 'MonoLisa';
+}
+
+a:hover {
+    color:chocolate;
+}
+
+h2, h3, h4, h5, h6 {
+    font-family: 'Arial';
+    margin-left: 10;
+}
+
+.date {
+    color: #828282;
+}
+
+.save {
+    float: right;
+}
+
+
+.top-menu, .top-menu:hover, .top-menu:visited {
+    color: #ffffff;
+    float: right;
+    font-size: 26pt;
+    margin-right: 20px;
+}
+
+.movie {
+    margin-bottom: 70px;
+}
+
+.movie h1 a, .post h1 a:visited {
+    color: #000000;
+}
+
+a {
+    color:coral;
+}
+
+.rate{
+    display: inline-block;
+    border: 0;
+}
+
+.rate > input{
+    display: none;
+
+}
+
+.rate > label{
+    float: right;
+}
+
+.rate >label:before{
+    display: inline-block;
+    font-size: 2rem;
+    font-family: FontAwesome;
+    content: "\f005";
+    margin: 0;
+    padding: 0.3rem .2rem;
+    cursor: pointer;
+}
+
+input:checked ~ label, label:hover ~ label{
+    color:#ffb503;
+
+}
+
+input:checked + label:hover, input:checked ~ label:hover, input:checker ~ label:hover ~ label,
+label:hover ~ input:checked ~ label{
+    color:#cc9000;
+} 
+
+.button1{
+  background-color: #fff;
+  border: 1px solid #d5d9d9;
+  border-radius: 8px;
+  box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+  box-sizing: border-box;
+  color: #0f1111;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Amazon Ember",sans-serif;
+  font-size: 17px;
+  line-height: 29px;
+  padding: 0 10px 0 11px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  width: 300px;
+  height:40px;
+}
+
+.button1:hover {
+  background-color: #f7fafa;
+}
+
+.button1:focus {
+  border-color: #008296;
+  box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+  outline: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+  
+.column {
+    float: left;
+    width: 21%;
+    padding: 5px;
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+th, td {
+    text-align: left;
+    padding: 5px;
+  }
+
+
+.form1 {
+    background-color: #fff;
+    border: 1px solid #d5d9d9;
+    border-radius: 8px;
+    box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+    box-sizing: border-box;
+    color: #0f1111;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Amazon Ember",sans-serif;
+    font-size: 17px;
+    line-height: 29px;
+    padding: 0 10px 0 11px;
+    position: relative;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    width: 300px;
+    height:40px;
+    padding: 7px;
+    border-radius: 6px;
+    font-size: 17px;
+    border: 2px solid transparent;
+    height: 36px;
+    box-shadow: 0 0 0 1px #dddddd, 0 2px 4px 0 rgb(0 0 0 / 7%), 0 1px 1.5px 0 rgb(0 0 0 / 5%);
+    :focus{
+        border: 2px solid #000;
+        border-radius: 4px;
+    }
+
+    width: 300px;
+    height:40px;
+
+}

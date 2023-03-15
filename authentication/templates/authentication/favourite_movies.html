@@ -1,0 +1,3 @@
+{% for movie in movies %}
+    <h1><a href="{% url 'movie_detail' id=movie.imdb_id %}">{{ movie.name }}</a></h1>
+{% endfor %}
