@@ -65,27 +65,25 @@ TEMPLATES = [
 WSGI_APPLICATION = 'project.wsgi.application'
 
 
-# Database postgresql 4 docker
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'HOST': os.environ.get('DB_HOST', 'database'),
-#         'PASSWORD': os.environ.get('DB_PASS', '123'),
-#         'USER': os.environ.get('DB_USER', 'dm3tr0'),
-#         'NAME': os.environ.get('DB_NAME', 'movies'),
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'HOST': os.environ.get('DB_HOST', 'database'),
+        'PASSWORD': os.environ.get('DB_PASS', '123'),
+        'USER': os.environ.get('DB_USER', 'dm3tr0'),
+        'NAME': os.environ.get('DB_NAME', 'movies'),
+    }
+}
 
 
 # Database sqlite (default)
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
