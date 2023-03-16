@@ -65,26 +65,26 @@ TEMPLATES = [
 WSGI_APPLICATION = 'project.wsgi.application'
 
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'PASSWORD': os.environ.get('DB_PASS', '123'),
-        'USER': os.environ.get('DB_USER', 'dm3tr0'),
-        'NAME': os.environ.get('DB_NAME', 'movies'),
-        'PORT': os.environ.get('DB_PORT', '5432'),
-        'HOST': os.environ.get('DB_HOST', 'database'),
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'PASSWORD': os.environ.get('DB_PASS', '123'),
+#         'USER': os.environ.get('DB_USER', 'dm3tr0'),
+#         'NAME': os.environ.get('DB_NAME', 'movies'),
+#         'PORT': os.environ.get('DB_PORT', '5432'),
+#         'HOST': os.environ.get('DB_HOST', 'database'),
+#     }
+# }
 
 
 # Database sqlite (default)
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
@@ -109,7 +109,7 @@ EMAIL_HOST = os.getenv('EMAIL_HOST', 'localhost')
 EMAIL_PORT = int(os.getenv('EMAIL_PORT', '555'))
 EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER', 'test')
 EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD', 'test')
-EMAIL_USE_TSL = os.getenv('EMAIL_USE_TSL', 'False').lower() in ('1', 'true')
+EMAIL_USE_TSL = os.getenv('EMAIL_USE_TSL', 'False').lower() in ('1', 'true') #type : ignore
 
 LOGIN_URL = '/auth/login/'
 
