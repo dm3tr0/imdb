@@ -7,7 +7,7 @@ RUN apk update \
 RUN pip install -r requirements.txt
 
 
-CMD uwsgi --module=project.wsgi:application \
+CMD uwsgi "django.core.wsgi:get_wsgi_application()" \
     --master \
     --socket=0.0.0.0:8000 \
     --processes=5 \ 
