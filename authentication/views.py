@@ -19,7 +19,7 @@ class LoginView(FormView):
     success_url = reverse_lazy('auth:account')
 
     def form_valid(self, form):
-        login(self.request, User.objects.get(email=form.cleaned_data['email']))
+        login(self.request, User.objects.get(email=form.cleaned_data['email']), backend='django.contrib.auth.backends.ModelBackend')
         return super().form_valid(form)
 
 
