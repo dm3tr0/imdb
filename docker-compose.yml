@@ -4,6 +4,8 @@ services:
 
   database:
       image: postgres:15.1
+      ports:
+      - "5432:5432"
       environment:
         - POSTGRES_NAME=movies
         - POSTGRES_USER=dm3tr0
