@@ -3,7 +3,8 @@ COPY . .
 EXPOSE 8000
 RUN pip install -r requirements.txt
 RUN apk update \
-    && apk add postgresql-dev gcc python3-dev musl-dev
+    && apk add postgresql-dev gcc python3-dev musl-dev\
+    && sudo apt-get install gcc
 
 CMD uwsgi --module=project.wsgi:application \
     --master \
