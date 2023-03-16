@@ -32,7 +32,7 @@ class Command(BaseCommand):
         file = options['file']
 
         if file:
-            with open(str(BASE_DIR)+"\\movies\\mdb\\"+file, encoding='utf-8') as dir:
+            with open(str(BASE_DIR)+"/imdb2000/"+file, encoding='utf-8') as dir:
                 tsv_file = csv.reader(dir, delimiter="\t")
                 for line in tsv_file:
                     models=PersonMovie(mid=line[0], pid=line[2], order=line[1], category=line[3], job=line[4], chars=line[5])
