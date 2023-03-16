@@ -38,5 +38,8 @@ class Command(BaseCommand):
                     if line[0] in pics.keys():
                         models=Movie(imdb_id=line[0], title_type=line[1], name=line[2], adult=line[4], year=line[5], genre=line[-1], pic=pics[line[0]])
                         models.save()
+                    else:
+                        models=Movie(imdb_id=line[0], title_type=line[1], name=line[2], adult=line[4], year=line[5], genre=line[-1], pic='https://userstyles.org/style_screenshots/214460_after.jpeg')
+                        models.save()
                     
                    

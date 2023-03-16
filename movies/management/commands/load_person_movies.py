@@ -35,6 +35,6 @@ class Command(BaseCommand):
             with open(str(BASE_DIR)+"\\movies\\mdb\\"+file, encoding='utf-8') as dir:
                 tsv_file = csv.reader(dir, delimiter="\t")
                 for line in tsv_file:
-                    if line[0] in pics.keys():
-                        models=PersonMovie(mid=line[0], pid=line[2], order=line[1], category=line[3], job=line[4], chars=line[5])
-                        models.save()
+                    models=PersonMovie(mid=line[0], pid=line[2], order=line[1], category=line[3], job=line[4], chars=line[5])
+                    models.save()
+                    
