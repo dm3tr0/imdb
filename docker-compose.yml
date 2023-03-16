@@ -25,6 +25,7 @@ services:
       - DB_NAME=movies
       - DB_USER=dm3tr0
       - DB_PASS=123
+      - DB_PORT=5432
       
       - POSTGRES_NAME=movies
       - POSTGRES_USER=dm3tr0
