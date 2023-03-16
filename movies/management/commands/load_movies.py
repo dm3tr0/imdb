@@ -32,7 +32,7 @@ class Command(BaseCommand):
         file = options['file']
 
         if file:
-            with open(str(BASE_DIR)+"/movies/mdb/"+file, encoding='utf-8') as dir:
+            with open(str(BASE_DIR)+"/movies/imdb2000/"+file, encoding='utf-8') as dir:
                 tsv_file = csv.reader(dir, delimiter="\t")
                 for line in tsv_file:
                     if line[0] in pics.keys():
