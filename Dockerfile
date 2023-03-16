@@ -3,7 +3,7 @@ COPY . .
 EXPOSE 8000
 RUN apk update \
     && apk add postgresql-dev gcc python3-dev musl-dev\
-    && sudo apt-get install gcc
+    && apt-get install gcc
 RUN pip install -r requirements.txt
 
 
