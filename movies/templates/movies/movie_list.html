@@ -16,7 +16,7 @@
 </head>
 <div class="content">
     {% for movie in object_list %}
-    <img src="{{ movie.pic }}">
+    <img src="{{ movie.pic }}" width="350" height="100">
     <h1><a href="{% url 'movie_detail' id=movie.imdb_id %}">{{ movie.name }}</a></h1>
     <h3>{{ movie.year }}
         {{ movie.genre }}</h3>
