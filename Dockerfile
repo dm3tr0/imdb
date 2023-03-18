@@ -8,7 +8,7 @@ RUN pip install -r requirements.txt
 
 
 CMD uwsgi --module="django.core.wsgi:get_wsgi_application()" \
-    --master \
+    --master --pidfile=/tmp/project-master.pid \
     --http=0.0.0.0:8000 \
     --processes=5 \ 
     --harakiri=20 \
