@@ -15,6 +15,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
+#DJANGO_SETTINGS_MODULE=project.settings
 
 # Application definition
 
