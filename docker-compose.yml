@@ -32,6 +32,7 @@ services:
       - POSTGRES_NAME=movies
       - POSTGRES_USER=dm3tr0
       - POSTGRES_PASSWORD=postgres
+      - DJANGO_SETTINGS_MODULE=project.settings
 
     depends_on:
       - database
