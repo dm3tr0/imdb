@@ -1,16 +1,19 @@
-FROM python:3.9-alpine3.16
-COPY . .
-EXPOSE 8000
-RUN apk update \
-    && apk add postgresql-dev gcc python3-dev musl-dev linux-headers
+FROM python:3.9
 
-RUN pip install -r requirements.txt
+ADD requirements.txt /requirements.txt
+RUN apt update; apt install -y gettext; rm -rf /var/apt/cache; apt install gcc
+RUN pip install -r /requirements.txt
 
 
-CMD uwsgi --module="django.core.wsgi:get_wsgi_application()" \
+ADD . /src
+WORKDIR /src
+
+
+CMD uwsgi --module "django.core.wsgi:get_wsgi_application()" \
     --master --pidfile=/tmp/project-master.pid \
-    --socket=0.0.0.0:8000 \
-    --processes=5 \ 
+    --http=0.0.0.0:8000 \
+    --processes=4 \
     --harakiri=20 \
     --max-requests=5000 \
-    --vacuum 
+    --vacuum \
+    --enable-threads
