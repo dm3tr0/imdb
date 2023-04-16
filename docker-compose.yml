@@ -19,6 +19,7 @@ services:
     image: "bigasshmwork-web-1"
     volumes:
       - .:/src
+      - static:/static
     tty: true
     environment:
       - DB_HOST=database
