@@ -3,13 +3,13 @@ version: "3.9"
 services:
 
   database:
-      image: postgres:15.1
-      ports:
+    image: postgres:15.1
+    ports:
       - "5432:5432"
-      environment:
-        - POSTGRES_NAME=movies
-        - POSTGRES_USER=dm3tr0
-        - POSTGRES_PASSWORD=123
+    environment:
+      - POSTGRES_NAME=movies
+      - POSTGRES_USER=dm3tr0
+      - POSTGRES_PASSWORD=123
 
   web:
     env_file:
@@ -27,7 +27,6 @@ services:
       - DB_USER=dm3tr0
       - DB_PASS=123
       - DB_PORT=5432
-      
       - POSTGRES_NAME=movies
       - POSTGRES_USER=dm3tr0
       - POSTGRES_PASSWORD=postgres
@@ -38,12 +37,16 @@ services:
       - database
 
   nginx:
-    image: nginx:1.23.3
-    volumes:
-      - static:/static:ro
-      - ./config/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    image: nginx:latest
     ports:
-      - "8000:80"
+      - "10080:80"
+      - "10443:443"
+    volumes:
+      - .:/app
+      - ./config/nginx:/etc/nginx/conf.d
+      - ./static_cdn:/static
+   depends_on:
+      - web
 
 volumes:
   pgdata:
